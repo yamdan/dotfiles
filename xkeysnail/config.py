@@ -109,7 +109,7 @@ define_keymap(lambda wm_class: wm_class not in emacs_like_apps, {
     K("RC-space"): set_mark(True),
     K("RC-M-space"): with_or_set_mark(K("C-right")),
     # Search
-    K("RC-s"): K("F3"),
+    K("RC-s"): K("C-f"),
     K("RC-r"): K("Shift-F3"),
     K("M-Shift-key_5"): K("C-h"),
     # Cancel
