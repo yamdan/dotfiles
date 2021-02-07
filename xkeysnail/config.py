@@ -64,8 +64,13 @@ define_keymap(re.compile("Zeal"), {
     K("C-s"): K("C-k"),
 }, "Zeal")
 
+emacs_like_apps = (
+    "Emacs", "URxvt",
+    "Gnome-terminal",
+)
+
 # Emacs-like keybindings in non-Emacs applications
-define_keymap(lambda wm_class: wm_class not in ("Emacs", "URxvt"), {
+define_keymap(lambda wm_class: wm_class not in emacs_like_apps, {
     # Cursor
     K("C-b"): with_mark(K("left")),
     K("C-f"): with_mark(K("right")),
