@@ -8,7 +8,7 @@ define_timeout(1)
 
 # [Global modemap] Change modifier keys as in xmodmap
 define_modmap({
-    Key.CAPSLOCK: Key.LEFT_CTRL
+    Key.CAPSLOCK: Key.RIGHT_CTRL
 })
 
 # # [Conditional modmap] Change modifier keys in certain applications
