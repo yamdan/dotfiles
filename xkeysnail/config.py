@@ -125,7 +125,7 @@ define_keymap(lambda wm_class: wm_class not in emacs_like_apps, {
         # C-x C-s (save)
         K("RC-s"): K("C-s"),
         # C-x k (kill tab)
-        K("k"): K("C-f4"),
+        K("k"): K("C-w"),
         # C-x C-c (exit)
         K("RC-c"): K("C-q"),
         # cancel
