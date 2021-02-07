@@ -28,6 +28,12 @@ define_multipurpose_modmap(
     # To use this example, you can't remap capslock with define_modmap.
 )
 
+# HandS (変換/無変換 and Space) Keys
+define_multipurpose_modmap({
+    Key.MUHENKAN: [Key.MUHENKAN, Key.LEFT_SHIFT],
+    Key.HENKAN: [Key.HENKAN, Key.RIGHT_SHIFT]
+})
+
 # [Conditional multipurpose modmap] Multipurpose modmap in certain conditions,
 # such as for a particular device.
 define_conditional_multipurpose_modmap(lambda wm_class, device_name: device_name.startswith("Microsoft"), {
