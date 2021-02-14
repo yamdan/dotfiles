@@ -1,0 +1,10 @@
+ [Unit]
+Description=workaround for AMD GPU
+
+[Service]
+User=root
+Group=root
+ExecStart=/opt/amdgpu_workaround.sh
+
+[Install]
+WantedBy=multi-user.target
