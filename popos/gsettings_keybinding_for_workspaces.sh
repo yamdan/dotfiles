@@ -1,5 +1,7 @@
 #!/bin/bash
 
+gsettings set org.gnome.mutter workspaces-only-on-primary false
+
 gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 10
 
