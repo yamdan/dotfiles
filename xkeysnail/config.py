@@ -8,7 +8,9 @@ define_timeout(1)
 
 # [Global modemap] Change modifier keys as in xmodmap
 define_modmap({
-    Key.CAPSLOCK: Key.RIGHT_CTRL
+    Key.CAPSLOCK: Key.RIGHT_CTRL,
+    Key.KATAKANAHIRAGANA: Key.LEFT_META,
+    Key.RO: Key.LEFT_CTRL,
 })
 
 # # [Conditional modmap] Change modifier keys in certain applications
@@ -19,19 +21,17 @@ define_modmap({
 # [Multipurpose modmap] Give a key two meanings. A normal key when pressed and
 # released, and a modifier key when held down with another key. See Xcape,
 # Carabiner and caps2esc for ideas and concept.
-define_multipurpose_modmap(
+define_multipurpose_modmap({
     # Enter is enter when pressed and released. Control when held down.
-    {Key.ENTER: [Key.ENTER, Key.RIGHT_CTRL]}
+    # Key.ENTER: [Key.ENTER, Key.RIGHT_CTRL],
 
     # Capslock is escape when pressed and released. Control when held down.
-    # {Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL]
+    # Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL],
     # To use this example, you can't remap capslock with define_modmap.
-)
 
-# HandS (変換/無変換 and Space) Keys
-define_multipurpose_modmap({
+    # HandS (変換/無変換 and Space) Keys
     Key.MUHENKAN: [Key.MUHENKAN, Key.LEFT_SHIFT],
-    Key.HENKAN: [Key.HENKAN, Key.RIGHT_SHIFT]
+    Key.HENKAN: [Key.HENKAN, Key.RIGHT_SHIFT],
 })
 
 # [Conditional multipurpose modmap] Multipurpose modmap in certain conditions,
@@ -132,5 +132,7 @@ define_keymap(lambda wm_class: wm_class not in emacs_like_apps, {
         K("RC-g"): pass_through_key,
         # C-x u (undo)
         K("u"): [K("C-z"), set_mark(False)],
-    }
+    },
+    # Tab
+    K("RC-i"): K("tab"),
 }, "Emacs-like keys")
